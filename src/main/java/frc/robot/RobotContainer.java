@@ -62,9 +62,9 @@ public class RobotContainer {
   private final TargetTrackModeEngage m_TargetTrackModeEngage = new TargetTrackModeEngage();
   private final TargetTrackModeDisengage m_TargetTrackModeDisengage = new TargetTrackModeDisengage();
   private final TiltToControlWheel m_TiltToControlWheel = new TiltToControlWheel();
-  private final MoveZipline m_MoveZipline = new MoveZipline();
+  // private final MoveZipline m_MoveZipline = new MoveZipline();
   private final TiltMagToLow m_TiltMagToLow = new TiltMagToLow();
-  private final TiltNudge m_TiltNudge = new TiltNudge();
+  // private final TiltNudge m_TiltNudge = new TiltNudge();
   // private final Command m_autoCommand;
 
   //Instantiate the Object, SwerveJoy, the joystick that controls the swervedrive
@@ -83,23 +83,6 @@ public class RobotContainer {
   private static JoystickButton btnStart = new JoystickButton(swerveJoy, 10); //Start Button - Level 3 Climb
   private static JoystickButton btnLeftStick = new JoystickButton(swerveJoy, 11); //Left Stick Button
   private static JoystickButton btnRightStick = new JoystickButton(swerveJoy, 12); //Right Stick Button
-
-  //Instantiate the Object, operatorJoy, the joystick that controls the grabber/arm
-  public static Joystick operatorJoy = new Joystick(1);
-
-  //Instantiate the buttons 0-11
-  private static JoystickButton obtnSquare = new JoystickButton(operatorJoy, 1); //X Button - Lift to Middle Goal
-  private static JoystickButton obtnX = new JoystickButton(operatorJoy, 2); //A Button - Lift to Low Goal
-  private static JoystickButton obtnO = new JoystickButton(operatorJoy, 3); //B Button - Lift to Cargo Ship
-  private static JoystickButton obtnTriangle = new JoystickButton(operatorJoy, 4); //Y Button - Lift to High Goal
-  private static JoystickButton obtnL1 = new JoystickButton(operatorJoy, 5); //LB Button - Hatch Grab
-  private static JoystickButton obtnR1 = new JoystickButton(operatorJoy, 6); //RB Button - Hatch Release
-  private static JoystickButton obtnL2 = new JoystickButton(operatorJoy, 7); //LT Button - Ball Intake
-  private static JoystickButton obtnR2 = new JoystickButton(operatorJoy, 8); //RT Button - Ball Shoot
-  private static JoystickButton obtnSelect = new JoystickButton(operatorJoy, 9); //Back Button - Level 2 climb boomerang level
-  private static JoystickButton obtnStart = new JoystickButton(operatorJoy, 10); //Start Button  - Level 3 climb boomerang level
-  private static JoystickButton obtnLeftStick = new JoystickButton(operatorJoy, 11); //Left Stick Button
-  private static JoystickButton obtnRightStick = new JoystickButton(operatorJoy, 12); //Right Stick Button - Reverse Ball Intake
 
   // ***** The container for the robot. Contains subsystems, OI devices, and
   // commands.
@@ -131,14 +114,6 @@ public class RobotContainer {
     btnB.whenPressed(m_ReverseIntake, false);
     btnB.whenReleased(m_StopIntake, false);
 
-    // Operator Buttons
-    obtnSquare.whenPressed(m_RotateWheelToColor, false);
-    obtnTriangle.whenPressed(m_TiltToControlWheel, false);
-    obtnO.whenPressed(m_RotateWheel3Times, false);
-    obtnSelect.whenPressed(m_MoveZipline, false);
-    obtnStart.whenPressed(m_RetractWinch, false);
-    obtnX.whenPressed(m_TiltMagToLow, false);
-    obtnLeftStick.whenPressed(m_TiltNudge, false);
   }
 
   public static double getDriverX() {
@@ -151,18 +126,6 @@ public class RobotContainer {
 
   public static double getDriverZ() {
     return swerveJoy.getZ();
-  }
-
-  public static double getOperatorX() {
-    return operatorJoy.getX();
-  }
-
-  public static double getOperatorY() {
-    return operatorJoy.getY();
-  }
-
-  public static double getOperatorZ() {
-    return operatorJoy.getZ();
   }
 
   public static boolean getShootButtonState() {

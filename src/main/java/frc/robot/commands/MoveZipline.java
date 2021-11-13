@@ -5,50 +5,50 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+// package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.RobotContainer;
-import frc.robot.RobotMap;
+// import edu.wpi.first.wpilibj2.command.CommandBase;
+// import frc.robot.RobotContainer;
+// import frc.robot.RobotMap;
 
-public class MoveZipline extends CommandBase {
-  private double move;
+// public class MoveZipline extends CommandBase {
+//   private double move;
 
-  /**
-   * Creates a new MoveZipline.
-   */
-  public MoveZipline() {
-    // Use addRequirements() here to declare subsystem dependencies.
-  }
+//   /**
+//    * Creates a new MoveZipline.
+//    */
+//   public MoveZipline() {
+//     // Use addRequirements() here to declare subsystem dependencies.
+//   }
 
-  // Called when the command is initially scheduled.
-  @Override
-  public void initialize() {
-    RobotContainer.m_tilt.setTiltVert();
-    // RobotContainer.m_led.climbLED();
-  }
+//   // Called when the command is initially scheduled.
+//   @Override
+//   public void initialize() {
+//     RobotContainer.m_tilt.setTiltVert();
+//     // RobotContainer.m_led.climbLED();
+//   }
 
-  // Called every time the scheduler runs while the command is scheduled.
-  @Override
-  public void execute() {
-    if (RobotContainer.m_tilt.getTiltPosition() >= RobotMap.MAGAZINE_VERTICAL - 5000) {
-      RobotContainer.m_lift.releaseArm();
-    }
+//   // Called every time the scheduler runs while the command is scheduled.
+//   @Override
+//   public void execute() {
+//     if (RobotContainer.m_tilt.getTiltPosition() >= RobotMap.MAGAZINE_VERTICAL - 5000) {
+//       RobotContainer.m_lift.releaseArm();
+//     }
     
-    move = RobotContainer.getOperatorX();
-    if ((move > -RobotMap.X_AXIS_THREASHOLD) && (move < RobotMap.X_AXIS_THREASHOLD))
-      move = 0.;
-    RobotContainer.m_colorAndZipline.moveZipline(move);
-  }
+//     move = RobotContainer.getOperatorX();
+//     if ((move > -RobotMap.X_AXIS_THREASHOLD) && (move < RobotMap.X_AXIS_THREASHOLD))
+//       move = 0.;
+//     RobotContainer.m_colorAndZipline.moveZipline(move);
+//   }
 
-  // Called once the command ends or is interrupted.
-  @Override
-  public void end(boolean interrupted) {
-  }
+//   // Called once the command ends or is interrupted.
+//   @Override
+//   public void end(boolean interrupted) {
+//   }
 
-  // Returns true when the command should end.
-  @Override
-  public boolean isFinished() {
-    return false;
-  }
-}
+//   // Returns true when the command should end.
+//   @Override
+//   public boolean isFinished() {
+//     return false;
+//   }
+// }
