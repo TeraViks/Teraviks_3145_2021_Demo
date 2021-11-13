@@ -138,11 +138,11 @@ public class Robot extends TimedRobot {
     Timer.delay(.5);
 
     if (bootCycle && enableCalibration){
-      // CommandScheduler.getInstance().schedule(new CalibrateDriveTrain());
+      CommandScheduler.getInstance().schedule(new CalibrateDriveTrain());
       CommandScheduler.getInstance().schedule(new CalibrateTilt());
     } else CommandScheduler.getInstance().schedule(new TiltMagToLow());
 
-    // RobotContainer.m_drivetrain.maxDrivePower(.1);
+    RobotContainer.m_drivetrain.maxDrivePower(.1);
 
     // RobotContainer.m_shooterCam.setCamMode(1); // default to regular vision mode, not tracking mode
     // RobotContainer.m_shooterCam.ledOff();
@@ -150,14 +150,14 @@ public class Robot extends TimedRobot {
     // RobotContainer.m_intakeCam.setCamMode(1); // default to regular vision mode, not tracking mode
     // RobotContainer.m_intakeCam.ledOff();
 
-    // CommandScheduler.getInstance().schedule(new DriveSpeed());
     CommandScheduler.getInstance().run();
 
     bootCycle = false;
 
     System.out.println("//////////////////// Teleop /////////////////");
     // CommandScheduler.getInstance().schedule(new LoadMagazine());
-    // CommandScheduler.getInstance().schedule(new Drive());
+    RobotContainer.m_drivetrain.setHighSpeedDriveMode();
+    CommandScheduler.getInstance().schedule(new Drive());
     // RobotContainer.m_led.clearLED();
   }
 

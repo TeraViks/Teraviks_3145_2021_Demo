@@ -47,7 +47,6 @@ public class RobotContainer {
   private final Drive m_Drive = new Drive();
   private final FieldCentric m_FieldCentric = new FieldCentric();
   private final GetColor m_GetColor = new GetColor();
-  private final DriveSpeed m_DriveSpeed = new DriveSpeed();
   private final RobotCentric m_RobotCentric = new RobotCentric();
   private final SnakeMode m_SnakeMode = new SnakeMode();
   private final RotateWheelToColor m_RotateWheelToColor = new RotateWheelToColor();
@@ -62,6 +61,8 @@ public class RobotContainer {
   private final TargetTrackModeEngage m_TargetTrackModeEngage = new TargetTrackModeEngage();
   private final TargetTrackModeDisengage m_TargetTrackModeDisengage = new TargetTrackModeDisengage();
   private final TiltToControlWheel m_TiltToControlWheel = new TiltToControlWheel();
+  private final TiltDown m_TiltDown = new TiltDown();
+  private final TiltUp m_TiltUp = new TiltUp();
   // private final MoveZipline m_MoveZipline = new MoveZipline();
   private final TiltMagToLow m_TiltMagToLow = new TiltMagToLow();
   // private final TiltNudge m_TiltNudge = new TiltNudge();
@@ -101,18 +102,14 @@ public class RobotContainer {
   private void configureButtonBindings() {
     // Driver Buttons
 
-    btnA.whenPressed(m_InvertDrivetrain, false);
+    btnB.whenPressed(m_InvertDrivetrain, false);
     btnRT.whenPressed(m_ShootBall, true);
-    btnLT.whenPressed(m_DriveSpeed, false);
-    btnLT.whenReleased(m_DriveSpeed, false);
-    btnLB.whenPressed(m_DriveSpeed,false);
-    btnLB.whenReleased(m_DriveSpeed, false);
     btnRB.whenPressed(m_IntakeBall, false);
     btnRB.whenReleased(m_StopIntake, false);
-    btnY.whenPressed(m_TargetTrackModeEngage, false);
-    btnY.whenReleased(m_TargetTrackModeDisengage, false);
-    btnB.whenPressed(m_ReverseIntake, false);
-    btnB.whenReleased(m_StopIntake, false);
+    btnLB.whenPressed(m_ReverseIntake, false);
+    btnLB.whenReleased(m_StopIntake, false);
+    btnA.whenPressed(m_TiltDown, false);
+    btnY.whenPressed(m_TiltUp, false);
 
   }
 
