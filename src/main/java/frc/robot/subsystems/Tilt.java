@@ -83,6 +83,16 @@ public class Tilt extends SubsystemBase {
     setTiltVert();
   }
 
+  public void calMagBottom () {
+    tiltMotor.set(ControlMode.PercentOutput, .0);
+    
+    delay(1000);
+
+    tiltMotor.setSelectedSensorPosition(-83400);
+
+    setTiltLow();
+  }
+
   private void delay(int msec){
     try{
         Thread.sleep(msec);

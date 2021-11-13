@@ -21,6 +21,6 @@ public class CalibrateTilt extends InstantCommand {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.m_tilt.calMagVert();
+    RobotContainer.m_tilt.calMagBottom();
   }
 }

@@ -37,11 +37,11 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
 
-    RobotContainer.m_gyro.reset();
-    RobotContainer.m_drivetrain.init();
-    RobotContainer.m_magazine.init();
-    RobotContainer.m_intake.init();
-    RobotContainer.m_shooter.init();
+    // RobotContainer.m_gyro.reset();
+    // RobotContainer.m_drivetrain.init();
+    // RobotContainer.m_magazine.init();
+    // RobotContainer.m_intake.init();
+    // RobotContainer.m_shooter.init();
     // RobotContainer.m_lift.init();
     RobotContainer.m_tilt.init();
     // RobotContainer.m_colorAndZipline.init();
@@ -83,8 +83,8 @@ public class Robot extends TimedRobot {
     // SmartDashboard.putNumber("TyAverage", RobotContainer.m_drivetrain.getTyAvg());
     // SmartDashboard.putNumber("TargetTiltPos", RobotContainer.m_drivetrain.getTargetTiltPos());
     // SmartDashboard.putNumber("TxAverage", RobotContainer.m_drivetrain.getTxAvg());
-    SmartDashboard.putNumber("distance to target", RobotContainer.m_drivetrain.getDistance());
-    SmartDashboard.putNumber("Tilt position", RobotContainer.m_tilt.getTiltPosition());
+    // SmartDashboard.putNumber("distance to target", RobotContainer.m_drivetrain.getDistance());
+    // SmartDashboard.putNumber("Tilt position", RobotContainer.m_tilt.getTiltPosition());
     // SmartDashboard.putData(CommandScheduler.getInstance());
   }
   /**
@@ -112,13 +112,13 @@ public class Robot extends TimedRobot {
     Timer.delay(.5);
 
     if (bootCycle && enableCalibration){
-      CommandScheduler.getInstance().schedule(new CalibrateDriveTrain());
+      // CommandScheduler.getInstance().schedule(new CalibrateDriveTrain());
       CommandScheduler.getInstance().schedule(new CalibrateTilt());
     } else CommandScheduler.getInstance().schedule(new TiltMagToLow());
     
-    CommandScheduler.getInstance().schedule(new LoadMagazine());
+    // CommandScheduler.getInstance().schedule(new LoadMagazine());
 
-    RobotContainer.m_drivetrain.maxDrivePower(.5);
+    // RobotContainer.m_drivetrain.maxDrivePower(.5);
 
     // AutoPaths.driveForward();
   }
@@ -138,26 +138,26 @@ public class Robot extends TimedRobot {
     Timer.delay(.5);
 
     if (bootCycle && enableCalibration){
-      CommandScheduler.getInstance().schedule(new CalibrateDriveTrain());
+      // CommandScheduler.getInstance().schedule(new CalibrateDriveTrain());
       CommandScheduler.getInstance().schedule(new CalibrateTilt());
     } else CommandScheduler.getInstance().schedule(new TiltMagToLow());
 
-    RobotContainer.m_drivetrain.maxDrivePower(.1);
+    // RobotContainer.m_drivetrain.maxDrivePower(.1);
 
-    RobotContainer.m_shooterCam.setCamMode(1); // default to regular vision mode, not tracking mode
-    RobotContainer.m_shooterCam.ledOff();
+    // RobotContainer.m_shooterCam.setCamMode(1); // default to regular vision mode, not tracking mode
+    // RobotContainer.m_shooterCam.ledOff();
 
     // RobotContainer.m_intakeCam.setCamMode(1); // default to regular vision mode, not tracking mode
     // RobotContainer.m_intakeCam.ledOff();
 
-    CommandScheduler.getInstance().schedule(new DriveSpeed());
+    // CommandScheduler.getInstance().schedule(new DriveSpeed());
     CommandScheduler.getInstance().run();
 
     bootCycle = false;
 
     System.out.println("//////////////////// Teleop /////////////////");
-    CommandScheduler.getInstance().schedule(new LoadMagazine());
-    CommandScheduler.getInstance().schedule(new Drive());
+    // CommandScheduler.getInstance().schedule(new LoadMagazine());
+    // CommandScheduler.getInstance().schedule(new Drive());
     // RobotContainer.m_led.clearLED();
   }
 

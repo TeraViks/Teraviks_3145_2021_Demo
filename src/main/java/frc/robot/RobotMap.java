@@ -110,6 +110,7 @@ public class RobotMap {
     public static final double GEAR_RATIO = 20.; // 20:1 gearbox
     public static final double MAG_LOW_ANGLE = 25.;
     public static final double MAGAZINE_LOW = -74766;
+    public static final double MAGAZINE_BOTTOM = -83400;
     public static final double MAGAZINE_VERTICAL = -2048.;
     public static final double PULSES_PER_DEGREE = MAGAZINE_LOW / 65.; // 65 degrees of travel
     public static final double PULSES_PER_RADIAN = MAGAZINE_LOW / 1.134;
