@@ -25,7 +25,7 @@ public class TiltDown extends InstantCommand {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    endPos = ((RobotContainer.m_tilt.getTiltPosition() / RobotMap.PULSES_PER_DEGREE) - 5) * RobotMap.PULSES_PER_DEGREE;
+    endPos = ((RobotContainer.m_tilt.getTiltPosition() / RobotMap.PULSES_PER_DEGREE) + 5) * RobotMap.PULSES_PER_DEGREE;
     
     if (endPos < RobotMap.MAGAZINE_LOW) {
       endPos = RobotMap.MAGAZINE_LOW;

@@ -110,6 +110,7 @@ public class RobotContainer {
     btnLB.whenReleased(m_StopIntake, false);
     btnA.whenPressed(m_TiltDown, false);
     btnY.whenPressed(m_TiltUp, false);
+    btnX.whenPressed(m_TiltMagToLow, false);
 
   }
 

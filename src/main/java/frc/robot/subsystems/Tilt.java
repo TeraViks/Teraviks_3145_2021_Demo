@@ -130,7 +130,7 @@ public class Tilt extends SubsystemBase {
 
     tiltMotor.config_IntegralZone(0, 50, TIMEOUT); // I-zone limits
 
-    tiltMotor.config_kP(0, .9, TIMEOUT);
+    tiltMotor.config_kP(0, .2, TIMEOUT); //was 0.9 before re-tuning to .2
     tiltMotor.config_kI(0, .001, TIMEOUT);
     tiltMotor.config_kD(0, .1, TIMEOUT);
     tiltMotor.config_kF(0, 0., TIMEOUT);
